@@ -1,5 +1,14 @@
 # merge alogorithm
-def new_way():
-    print('Hello')
+import numpy as np
+import pandas as pd
 
-new_way()
+def mergesort(array):
+
+    mid = len(array)//2
+    left = array[0:mid]
+    right = array[mid:len(array)]
+    
+    if len(array) == 1:
+        return array
+    else:
+        mergesort()
