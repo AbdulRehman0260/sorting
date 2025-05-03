@@ -1,5 +1,5 @@
 // code up a Node
-class Node {
+export class Node {
   constructor(value) {
     this.left = null;
     this.right = null;
@@ -8,7 +8,7 @@ class Node {
 }
 
 // code up a BFS implementation
-class BinarySearchTree {
+export class BinarySearchTree {
   constructor() {
     this.root = null;
   }
