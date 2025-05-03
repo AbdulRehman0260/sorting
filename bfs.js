@@ -15,11 +15,33 @@ class BinarySearchTree {
 
   insert(value) {
     const newNode = new Node(value);
+
     if (!this.root) {
       this.root = newNode;
+      return;
     }
-    //Any value smaller than current node value, should become the left child of the current node if there is no left child
-    if (pass) {
+
+    let currentNode = this.root;
+
+    while (true) {
+      if (value < currentNode.value) {
+        // Go left
+        if (!currentNode.left) {
+          currentNode.left = newNode;
+          return;
+        }
+        currentNode = currentNode.left;
+      } else if (value > currentNode.value) {
+        // Go right
+        if (!currentNode.right) {
+          currentNode.right = newNode;
+          return;
+        }
+        currentNode = currentNode.right;
+      } else {
+        // Duplicate value (optional handling)
+        return; // or throw Error or ignore
+      }
     }
   }
 }
