@@ -18,7 +18,7 @@ export class BinarySearchTree {
 
     if (!this.root) {
       this.root = newNode;
-      return;
+      return this;
     }
 
     let currentNode = this.root;
@@ -85,4 +85,33 @@ export class BinarySearchTree {
     return answers;
     //some comment;
   }
+
+  DFSInorder() {
+    return this.traverseInOrder(this.root, []);
+  }
+
+  traverseInOrder(node, list) {
+    if (node.left) {
+      this.traverseInOrder(node.left, list);
+    }
+    list.push(node.value);
+    if (node.right) {
+      this.traverseInOrder(node.right, list);
+    }
+    return list;
+  }
 }
+
+const tree = new BinarySearchTree(9);
+tree.insert(7);
+tree.insert(11);
+tree.insert(3);
+tree.insert(8);
+tree.insert(10);
+tree.insert(15);
+
+console.log(tree.DFSInorder());
+
+//    9
+// 7     11
+//3  8  10  15
