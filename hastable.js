@@ -31,6 +31,7 @@ class hashTable {
           return bucket[i][1];
         }
       }
+      return undefined;
     }
   }
 }
@@ -40,5 +41,5 @@ table.set("apples", 123);
 table.set("grapes", 23);
 table.set("pear", 1);
 table.set("orange", 24);
-let an = table.get("grapes");
-console.log(table);
+let an = table.get("pear");
+console.log(an);
