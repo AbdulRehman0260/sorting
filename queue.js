@@ -1,6 +1,6 @@
 class Queue {
   constructor() {
-    this.size = 0;
+    this.length = 0;
     this.list = [];
   }
 
@@ -8,13 +8,13 @@ class Queue {
 
   enqueue(value) {
     this.list.push(value);
-    this.size++;
+    this.length++;
   }
 
   // dequeue
   dequeue() {
     this.list.shift();
-    this.size--;
+    this.length--;
   }
 
   peek() {
@@ -22,11 +22,15 @@ class Queue {
   }
 
   isEmpty() {
-    return this.size === 0;
+    return this.length === 0;
   }
 
   print() {
     console.log(this.list);
+  }
+
+  size() {
+    console.log(this.length);
   }
 }
 
@@ -39,3 +43,4 @@ q.print();
 q.dequeue();
 q.dequeue();
 q.print();
+q.size();

@@ -77,6 +77,20 @@ class LinkedList {
       console.log(list);
     }
   }
+
+  reverse() {
+    let prev = null;
+    let curr = this.head;
+    let next;
+
+    while (curr) {
+      next = curr.next;
+      curr.next = prev;
+      prev = curr;
+      curr = next;
+    }
+    this.head = prev;
+  }
 }
 
 const data = new LinkedList();
@@ -87,7 +101,4 @@ data.print();
 console.log(data.getSize());
 data.append(233);
 data.print();
-data.pop();
-data.print();
-data.shift();
-data.print();
+data.print(data.reverse());
