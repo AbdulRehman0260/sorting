@@ -111,3 +111,21 @@ console.log(tree.dfsPreOrder());
 console.log(tree.dfsInOrder());
 console.log(tree.dfsPostOrder());
 tree.bfs();
+
+let list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function binarySearch(array, target, low = 0, high = array.length - 1) {
+  if (low > high) {
+    return "not found";
+  }
+  let middle = Math.floor((low + high) / 2);
+  if (target === array[middle]) {
+    return array[middle];
+  } else if (target > array[middle]) {
+    return binarySearch(array, target, middle + 1, high);
+  } else if (target < array[middle]) {
+    return binarySearch(array, target, low, middle - 1);
+  }
+}
+
+console.log(binarySearch(list, 22));
